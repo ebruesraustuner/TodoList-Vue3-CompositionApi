@@ -1,7 +1,7 @@
-# ToDo App with Vue 3 Composition API
+### ToDo App with Vue 3 Composition API
 
 
-# Demo: https://todolistapp-withvue.netlify.app/
+#### Demo: https://todolistapp-withvue.netlify.app/
 
 ## Project setup
 
