@@ -15,6 +15,7 @@
     </div>
     <div class="card__main">
       <h2>ToDo List</h2>
+      <hr class="break-box" />
       <ul class="card__main__list">
         <li v-for="(todo, index) in todos" :key="index">
           <span @click="doneTodo(todo)"> <input type="checkbox" id="drawline" /></span>
@@ -137,42 +138,86 @@ input[type="checkbox"] {
       text-decoration: line-through;
 }
 
-button {
+.btn {
+  color: $blue;
   padding: 0.75em;
   margin: 0.25em;
-}
-.btn-default {
-  border: 2px solid $blue;
-  background-color: $blue;
-  color: $white;
-}
+  box-shadow: 2px 2px 3px rgba($header-color, 0.2);
+  position: relative;
+  z-index: 3;
+  background-color: $background;
+  border-radius: 6px;
+  z-index: 2;
+  border: transparent;
 
-.btn-warning {
-  border: 2px solid $purple;
-  background-color: $purple;
-  color: $white;
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    box-shadow: -2px -2px 3px $white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 6px;
+    z-index: -1;
+  }
 
-  &:hover {
-    background-color: $pink;
+  &:hover{
+    box-shadow: inset 2px 2px 3px rgba($header-color, 0.2);
   }
 }
+
 
 h1 {
   text-align: center;
   color: $blue
 }
 
+    h2 {
+      width: 100%;
+      margin: 8px 4px;
+      position: relative;
+
+    }
 h4 {
   color: $header-color;
   padding: 0 8px;
   text-align: center;
 }
+
+hr {
+  //border: 2px solid black;
+  width: 100%;
+  height: 4px;
+  box-shadow: 2px 2px 3px rgba($header-color, 0.2);
+  position: relative;
+  z-index: 3;
+  background-color: $background;
+  border-radius: 4px;
+  z-index: 2;
+  border: transparent;
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    display: block;
+    box-shadow: -2px -2px 3px $white;
+    position: absolute;
+    top: 0;
+    border-radius: 6px;
+    z-index: -1;
+  }
+}
+
+
 .card {
   border: 1px solid #ecf0f3;
   width: 33.3%;
   min-width: 280px;
   height: auto;
-  box-shadow: 28px 28px 60px rgba(56, 77, 141, 0.2);
+  box-shadow: 28px 28px 60px rgba($header-color, 0.2);
   color: $blue;
   position: relative;
   margin: 2% 0;
@@ -210,10 +255,6 @@ h4 {
     flex-direction: row;
     flex-wrap: wrap;
 
-    h2 {
-      width: 100%;
-      margin: 16px 0;
-    }
     &__list {
       width: 100%;
       margin: 0;
