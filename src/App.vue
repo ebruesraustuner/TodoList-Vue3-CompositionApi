@@ -18,7 +18,7 @@
       <hr class="break-box" />
       <ul class="card__main__list">
         <li v-for="(todo, index) in todos" :key="index">
-          <span @click="doneTodo(todo)"> <input type="checkbox" id="drawline" /></span>
+          <span @click="doneTodo(todo)" class="quiz"></span>
           <label for="drawline" :class="{ completed: todo.done }" >{{
             todo.content
           }}</label>
@@ -267,6 +267,12 @@ hr {
         align-items: center;
       }
     }
+  }
+  .quiz {
+    background-image: url("./assets/quiz.svg");
+    width: 24px;
+    height: 24px;
+    opacity: .6;
   }
 }
 </style>
